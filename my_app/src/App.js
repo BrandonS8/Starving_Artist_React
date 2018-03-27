@@ -8,6 +8,7 @@ import {
   Switch
 } from 'react-router-dom'
 import axios from 'axios'
+import data from 'data.json'
 
 class App extends Component {
   render() {
@@ -26,7 +27,7 @@ class App extends Component {
             </nav>
           </div>
           <Switch>
-            <LandingPage />
+            <LandingPage store={data} />
             <Route path="/store" component={Store} />
             <Route path="/store/show" component={Show} />
             <Route path="/store/add" component={Add} />
