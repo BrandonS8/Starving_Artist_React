@@ -9,7 +9,7 @@ import {
 } from 'react-router-dom'
 import axios from 'axios'
 import data from './data.json'
-import StoreList from './StoreList'
+import StoreList from './StoreList/StoreList'
 
 class App extends Component {
   render () {

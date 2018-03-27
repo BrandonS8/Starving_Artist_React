@@ -1,0 +1,19 @@
+.storeCard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 250px;
+  width: 250px;
+  overflow: hidden;
+  margin: 10px;
+  border: 1px solid lightgrey;
+}
+.storeCardName{
+  background: lightgrey;
+  width: 100%;
+  text-align: center;
+}
+.storeCardImage{
+  max-width: 100%;
+  max-height: 80%;
+}

@@ -1,47 +1,35 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import axios from 'axios'
-class LandingPage extends Component {
-  constructor(props) {
-    super(props)
+
+import './StoreList.css'
+import StoreCard from '../StoreCard/StoreCard'
+class StoreList extends Component {
+  constructor () {
+    super()
+    this.state = {
+      stores: []
+    }
   }
-
-  componentWillMount() {}
-
-  componentDidMount() {}
-
-  componentWillReceiveProps(nextProps) {}
-
-  shouldComponentUpdate(nextProps, nextState) {}
-
-  componentWillUpdate(nextProps, nextState) {}
-
-  componentDidUpdate(prevProps, prevState) {}
-
-  componentWillUnmount() {}
-
-  render() {
-    //get react to show each item in the array using map
-    const products = this.props.products.map(data => {
-      console.log(data.title)
-      return (
-        <div className="eachProductPreview">
-          <h2>{data.title}</h2>
-          <img src={data.image} />
-          <h2>{data.price}</h2>
-          <h3>{data.description}</h3>
-        </div>
-      )
+  componentDidMount () {
+    axios.get('https://starving-artist.herokuapp.com/api')
+    .then(res => {
+      this.setState({
+        stores: res.data
+      })
+    })
+  }
+  render () {
+    // get react to show each item in the array using map
+    const stores = this.state.stores.map((store, i) => {
+      return <StoreCard key={i} image={store.products[0].image} name={store.name} />
     })
     return (
-      <div className="Products">
+      <div className='storeList'>
         {stores}
-        <h1>{this.props.store[0].title}</h1>
       </div>
     )
   }
 }
 
-LandingPage.propTypes = {}
-
-export default LandingPage
+export default StoreList
