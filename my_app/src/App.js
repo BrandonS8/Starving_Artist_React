@@ -8,10 +8,12 @@ import {
   Switch
 } from 'react-router-dom'
 import axios from 'axios'
-import data from 'data.json'
+import data from './data.json'
+import LandingPage from './LandingPage'
 
 class App extends Component {
   render() {
+    console.log(data[0].name)
     return (
       <Router>
         <div className="container">
@@ -27,11 +29,12 @@ class App extends Component {
             </nav>
           </div>
           <Switch>
+            {/* making store data available ot landing page component for reusability's sake */}
             <LandingPage store={data} />
-            <Route path="/store" component={Store} />
-            <Route path="/store/show" component={Show} />
-            <Route path="/store/add" component={Add} />
-            <Route path="/store/edit" component={Edit} />
+            {/* <Route path="/store" component={Store} /> */}
+            {/* <Route path="/store/show" component={Show} /> */}
+            {/* <Route path="/store/add" component={Add} /> */}
+            {/* <Route path="/store/edit" component={Edit} /> */}
           </Switch>
         </div>
       </Router>

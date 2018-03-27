@@ -1,68 +1,68 @@
 [
-    {
-    "products": [
-    {
-    "_id": "5aba6fda0050e8a358fa7cf3",
-    "artist": "Brandon",
-    "title": "A dog",
-    "description": "A drawing of a dog",
-    "image": "https://i.pinimg.com/originals/5f/c8/37/5fc83789f0886812ef3f26e8a22823d2.jpg",
-    "price": 500000,
-    "__v": 0
-    },
-    {
-    "_id": "5aba6fda0050e8a358fa7cf4",
-    "artist": "Brandon",
-    "title": "A sponge",
-    "description": "Literally a picture of a sponge",
-    "image": "https://images-na.ssl-images-amazon.com/images/I/51bJaFHxPPL._SX342_.jpg",
-    "price": 13,
-    "__v": 0
-    }
-    ],
-    "_id": "5aba6fda0050e8a358fa7cef",
-    "name": "Brandon's Store",
-    "about": "Brandon's Cool Store",
-    "__v": 1
-    },
-    {
-    "products": [
-    {
-    "_id": "5aba6fda0050e8a358fa7cf2",
-    "artist": "Carl",
-    "title": "Teacher Carl",
-    "description": "Carl does a teach",
-    "image": "https://vignette.wikia.nocookie.net/poohadventures/images/d/df/Carl_Wheezer.jpg/revision/latest?cb=20130526014202",
-    "price": 2,
-    "__v": 0
-    },
-    {
-    "_id": "5aba6fda0050e8a358fa7cf1",
-    "artist": "Carl",
-    "title": "Carl",
-    "description": "A picture of carl",
-    "image": "https://vignette.wikia.nocookie.net/jimmyneutron/images/7/71/Carl.png/revision/latest?cb=20180219044646",
-    "price": 1,
-    "__v": 0
-    }
-    ],
-    "_id": "5aba6fda0050e8a358fa7cf0",
-    "name": "Carl's Store",
-    "about": "Carl's Lame Store",
-    "__v": 1
-    },
-    {
-    "products": [],
-    "_id": "5aba8db02769d8df7a9f5ddb",
-    "name": "Brandon's Second Store",
-    "about": "ASDFGHJKL",
-    "__v": 0
-    },
-    {
-    "products": [],
-    "_id": "5aba8e1a7a7c92df9810ea70",
-    "name": "Brandon's Third Store",
-    "about": "ASDFGHJKL",
-    "__v": 4
-    }
-    ]
+  {
+  "products": [
+  {
+  "_id": "5aba6fda0050e8a358fa7cf3",
+  "artist": "Brandon",
+  "title": "A dog",
+  "description": "A drawing of a dog",
+  "image": "https://i.pinimg.com/originals/5f/c8/37/5fc83789f0886812ef3f26e8a22823d2.jpg",
+  "price": 500000,
+  "__v": 0
+  },
+  {
+  "_id": "5aba6fda0050e8a358fa7cf4",
+  "artist": "Brandon",
+  "title": "A sponge",
+  "description": "Literally a picture of a sponge",
+  "image": "https://images-na.ssl-images-amazon.com/images/I/51bJaFHxPPL._SX342_.jpg",
+  "price": 13,
+  "__v": 0
+  }
+  ],
+  "_id": "5aba6fda0050e8a358fa7cef",
+  "name": "Brandon's Store",
+  "about": "Brandon's Cool Store",
+  "__v": 1
+  },
+  {
+  "products": [
+  {
+  "_id": "5aba6fda0050e8a358fa7cf2",
+  "artist": "Carl",
+  "title": "Teacher Carl",
+  "description": "Carl does a teach",
+  "image": "https://vignette.wikia.nocookie.net/poohadventures/images/d/df/Carl_Wheezer.jpg/revision/latest?cb=20130526014202",
+  "price": 2,
+  "__v": 0
+  },
+  {
+  "_id": "5aba6fda0050e8a358fa7cf1",
+  "artist": "Carl",
+  "title": "Carl",
+  "description": "A picture of carl",
+  "image": "https://vignette.wikia.nocookie.net/jimmyneutron/images/7/71/Carl.png/revision/latest?cb=20180219044646",
+  "price": 1,
+  "__v": 0
+  }
+  ],
+  "_id": "5aba6fda0050e8a358fa7cf0",
+  "name": "Carl's Store",
+  "about": "Carl's Lame Store",
+  "__v": 1
+  },
+  {
+  "products": [],
+  "_id": "5aba8db02769d8df7a9f5ddb",
+  "name": "Brandon's Second Store",
+  "about": "ASDFGHJKL",
+  "__v": 0
+  },
+  {
+  "products": [],
+  "_id": "5aba8e1a7a7c92df9810ea70",
+  "name": "Brandon's Third Store",
+  "about": "ASDFGHJKL",
+  "__v": 4
+  }
+  ]

@@ -22,10 +22,10 @@ class LandingPage extends Component {
 
   render() {
     //get react to show each item in the array using map
-    const stores = this.props.store.map(data => {
-      console.log(data.products.title)
+    const products = this.props.products.map(data => {
+      console.log(data.title)
       return (
-        <div className="eachStorePreview">
+        <div className="eachProductPreview">
           <h2>{data.title}</h2>
           <img src={data.image} />
           <h2>{data.price}</h2>
@@ -34,7 +34,7 @@ class LandingPage extends Component {
       )
     })
     return (
-      <div className="LandingPage">
+      <div className="Products">
         {stores}
         <h1>{this.props.store[0].title}</h1>
       </div>
