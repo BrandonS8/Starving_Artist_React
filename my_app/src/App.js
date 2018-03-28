@@ -10,7 +10,7 @@ import {
 import axios from 'axios'
 import data from './data.json'
 import StoreList from './StoreList/StoreList'
-
+import AddStore from './AddStore/AddStore'
 class App extends Component {
   render () {
     console.log(data[0].name)
