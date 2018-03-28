@@ -13,6 +13,7 @@ class AddStore extends Component {
       name: e.target.name.value,
       about: e.target.about.value
     }).then(res => console.log(res))
+    .then(() => this.props.history.push('/'))
   }
 
   render () {
