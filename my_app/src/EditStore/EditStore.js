@@ -8,19 +8,14 @@ import {
   Redirect,
   Switch
 } from 'react-router-dom'
-//link store to the edit store component
-//display the data as props of the specific id of the specific store that user is accessing
-//axios post edits to the db array
 
 class EditStore extends Component {
   constructor(props) {
     super(props)
 
     this.state = {
-      //   products: [],
       name: '',
       about: ''
-      //   about: ''
     }
     this.handleChange = this.handleChange.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this)
@@ -46,7 +41,7 @@ class EditStore extends Component {
       )
       .then(() => this.props.history.push('/' + this.props.match.params.id))
       .then(res => {
-        console.log(res)
+        // console.log(res)
       })
   }
 
@@ -67,10 +62,13 @@ class EditStore extends Component {
 
   handleDelete(e) {
     e.preventDefault()
-    console.log(this.props.match.params.id)
-    axios.delete(
-      'https://starving-artist.herokuapp.com/api/' + this.props.match.params.id
-    )
+    // console.log(this.props.match.params.id)
+    axios
+      .delete(
+        'https://starving-artist.herokuapp.com/api/' +
+          this.props.match.params.id
+      )
+      .then(() => this.props.history.push('/'))
   }
 
   render() {
