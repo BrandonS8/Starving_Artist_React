@@ -14,6 +14,10 @@ class EditStore extends Component {
       name: ''
     }
   }
+
+  handleChange(event) {
+    this.setState({ name: event.target.value })
+  }
   componentDidMount() {
     axios
       .get(
@@ -29,7 +33,19 @@ class EditStore extends Component {
         // console.log(this.state.products)
       })
   }
-  render() {}
+  render() {
+    return (
+      <div>
+        <form>
+          <input
+            type="text"
+            value={this.state.name}
+            onChange={this.handleChange}
+          />
+        </form>
+      </div>
+    )
+  }
 }
 
 export default EditStore
