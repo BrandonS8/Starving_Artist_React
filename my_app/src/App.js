@@ -13,13 +13,9 @@ import StoreList from './StoreList/StoreList'
 import SingleStore from './SingleStore/SingleStore'
 import AddStore from './AddStore/AddStore'
 import ProductDetails from './ProductDetails/ProductDetails'
-<<<<<<< HEAD
 import EditStore from './EditStore/EditStore'
-=======
 import EditProduct from './EditProduct/EditProduct'
 import AddProduct from './AddProduct/AddProduct'
-
->>>>>>> c958ed63e90e2638b37f6eb6db591d48af5787e0
 
 class App extends Component {
   render() {
@@ -38,23 +34,13 @@ class App extends Component {
           </nav>
         </div>
         <Switch>
-<<<<<<< HEAD
           <Route path="/add-store" component={AddStore} />
-          {/* <Route path='/:id/add' component={AddProduct} /> */}
-          <Route path="/:id/edit" component={EditStore} />
-          {/* <Route path='/:id/:product/edit' component={EditProduct} /> */}
+          <Route path="/:id/add" component={AddProduct} />
+          {/* <Route path='/:id/edit' component={EditStore} /> */}
+          <Route path="/:id/:product/edit" component={EditProduct} />
           <Route path="/:id/:product" component={ProductDetails} />
           <Route path="/:id" component={SingleStore} />
           <Route path="/" component={StoreList} />
-=======
-          <Route path='/add-store' component={AddStore} />
-          <Route path='/:id/add' component={AddProduct} />
-          {/* <Route path='/:id/edit' component={EditStore} /> */}
-          <Route path='/:id/:product/edit' component={EditProduct} />
-          <Route path='/:id/:product' component={ProductDetails} />
-          <Route path='/:id' component={SingleStore} />
-          <Route path='/' component={StoreList} />
->>>>>>> c958ed63e90e2638b37f6eb6db591d48af5787e0
         </Switch>
       </div>
     )
