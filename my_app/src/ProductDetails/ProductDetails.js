@@ -12,7 +12,7 @@ class ProductDetail extends Component {
   }
 
   componentDidMount () {
-    axios.get('https://starving-artist.herokuapp.com/api/5abaa1b7b29ef80004072fa2/5abaa1b7b29ef80004072fa4')
+    axios.get('https://starving-artist.herokuapp.com/api/' + this.props.match.params.id + '/' + this.props.match.params.product)
             .then(response => {
               this.setState({
                 product: response.data
@@ -32,7 +32,5 @@ class ProductDetail extends Component {
     )
   }
 }
-
-
 
 export default ProductDetail
