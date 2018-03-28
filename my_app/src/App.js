@@ -9,28 +9,28 @@ import {
 } from 'react-router-dom'
 import axios from 'axios'
 import data from './data.json'
-import StoreList from './StoreList'
+import StoreList from './StoreList/StoreList'
 
 class App extends Component {
-  render () {
+  render() {
     console.log(data[0].name)
     return (
       <Router>
-        <div className='container'>
-          <div className='navBar'>
+        <div className="container">
+          <div className="navBar">
             <nav>
-              <Link to='/'>
+              <Link to="/">
                 <h1>Starving Artist</h1>
               </Link>
               <h5>
-                <Link to='/login'>Login</Link>
-                <Link to='/signup'>Signup</Link>
+                <Link to="/login">Login</Link>
+                <Link to="/signup">Signup</Link>
               </h5>
             </nav>
           </div>
           <Switch>
             {/* making store data available ot landing page component for reusability's sake */}
-            <StoreList />
+            {/* <StoreList /> */}
             {/* <Route path="/store" component={Store} /> */}
             {/* <Route path="/store/show" component={Show} /> */}
             {/* <Route path="/store/add" component={Add} /> */}
