@@ -12,6 +12,7 @@ import data from './data.json'
 import StoreList from './StoreList/StoreList'
 import SingleStore from './SingleStore/SingleStore'
 import AddStore from './AddStore/AddStore'
+import ProductDetails from './ProductDetails/ProductDetails'
 
 class App extends Component {
   render () {
