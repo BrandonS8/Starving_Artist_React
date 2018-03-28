@@ -11,26 +11,25 @@ class EditStore extends Component {
 
     this.state = {
       products: [],
-      image: '',
-      name: '',
+      name: ''
     }
-    componentDidMount() {
-        axios
-          .get(
-            'https://starving-artist.herokuapp.com/api/' +
-              this.props.match.params.id
-          )
-          .then(res => {
-            this.setState({
-              products: res.data.products,
-              image: res.data.store.image,
-              name: res.data.name
-            })
-            // console.log(this.state.products)
-          })
-      }
   }
-  render() {
-
+  componentDidMount() {
+    axios
+      .get(
+        'https://starving-artist.herokuapp.com/api/' +
+          this.props.match.params.id
+      )
+      .then(res => {
+        this.setState({
+          products: res.data.products,
+          image: res.data.store.image,
+          name: res.data.name
+        })
+        // console.log(this.state.products)
+      })
   }
+  render() {}
 }
+
+export default EditStore
