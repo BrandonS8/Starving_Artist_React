@@ -10,6 +10,7 @@ import {
 import axios from 'axios'
 import data from './data.json'
 import ProductDetail from './ProductDetails/ProductDetails'
+import AddProduct from './AddProduct/AddProduct'
 
 class App extends Component {
   render () {
@@ -30,7 +31,7 @@ class App extends Component {
           </div>
           <Switch>
             {/* making store data available ot landing page component for reusability's sake */}
-            <ProductDetail />
+            <AddProduct />
             {/* <Route path="/store" component={Store} /> */}
             {/* <Route path="/store/show" component={Show} /> */}
             {/* <Route path="/store/add" component={Add} /> */}

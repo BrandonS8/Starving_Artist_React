@@ -23,21 +23,27 @@ class AddProduct extends Component {
     return (
       <div>
         <form onSubmit={this.onSubmit}>
-          <label for='title'>Product Title</label>
-          <input type='text' name='title' />
-
-          <label for='name'>Artitst</label>
-          <input type='text' name='name' />
-
-          <label for='description'>Description</label>
-          <input type='text' name='description' />
-
-          <label for='price'>price</label>
-          <input type='text' name='price' />
-
-          <label for='imageUrl'>Image</label>
-          <input type='text' name='imageUrl' />
-
+          <p>
+            <label for='title'>Product Title</label>
+            <input type='text' name='title' />
+          </p>
+          <p>
+            <label for='name'>Artitst</label>
+            <input type='text' name='name' />
+          </p>
+          <p>
+            <label for='description'>Description</label>
+            <input type='text' name='description' />
+          </p>
+          <p>
+            <label for='Price'>price</label>
+            <input type='text' name='price' />
+          </p>
+          <p>
+            <label for='imageUrl'>Image</label>
+            <input type='text' name='imageUrl' />
+          </p>
+          <br />
           <input type='submit' value='ADD' />
         </form>
       </div>
