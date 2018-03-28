@@ -24,6 +24,7 @@ class EditStore extends Component {
     }
     this.handleChange = this.handleChange.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this)
+    this.handleDelete = this.handleDelete.bind(this)
   }
 
   handleChange (event) {
@@ -43,6 +44,7 @@ class EditStore extends Component {
         about: this.state.about
       }
       )
+      .then(() => this.props.history.push('/' + this.props.match.params.id))
       .then(res => {
         console.log(res)
       })
@@ -62,7 +64,16 @@ class EditStore extends Component {
         // console.log(this.state.products)
       })
   }
-  render () {
+
+  handleDelete(e) {
+    e.preventDefault()
+    console.log(this.props.match.params.id)
+    axios.delete(
+      'https://starving-artist.herokuapp.com/api/' + this.props.match.params.id
+    )
+  }
+
+  render() {
     return (
       <div>
         <form onSubmit={this.handleSubmit}>
@@ -85,6 +96,9 @@ class EditStore extends Component {
             <input type='submit' value='Submit' />
           </label>
         </form>
+        <button onClick={this.handleDelete}>
+          Completely Destroy this store
+        </button>
       </div>
     )
   }

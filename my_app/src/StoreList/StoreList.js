@@ -28,7 +28,7 @@ class StoreList extends Component {
           image={
             store.products[0]
               ? store.products[0].image
-              : 'https://i.vimeocdn.com/portrait/1274237_640x640'
+              : 'https://i.imgur.com/mOdmNdY.png'
           }
           name={store.name}
           id={store._id}
