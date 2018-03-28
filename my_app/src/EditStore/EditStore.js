@@ -44,6 +44,7 @@ class EditStore extends Component {
           about: this.state.about
         }
       )
+      .then(() => this.props.history.push('/' + this.props.match.params.id))
       .then(res => {
         console.log(res)
       })

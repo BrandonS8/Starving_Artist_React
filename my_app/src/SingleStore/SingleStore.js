@@ -22,7 +22,8 @@ class SingleStore extends Component {
       .then(res => {
         this.setState({
           products: res.data.products,
-          name: res.data.name
+          name: res.data.name,
+          about: res.data.about
         })
         // console.log(this.state.products)
       })
@@ -58,6 +59,7 @@ class SingleStore extends Component {
           Add A Product
         </a>
         <h1>{this.state.name}</h1>
+        <h2>{this.state.about}</h2>
         {products}
       </div>
     )
