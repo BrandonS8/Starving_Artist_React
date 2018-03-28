@@ -18,7 +18,8 @@ class EditStore extends Component {
 
     this.state = {
       //   products: [],
-      name: ''
+      name: '',
+      about: ''
       //   about: ''
     }
     this.handleChange = this.handleChange.bind(this)
@@ -26,12 +27,25 @@ class EditStore extends Component {
   }
 
   handleChange(event) {
-    this.setState({ name: event.target.value })
+    this.setState({ [event.target.name]: event.target.value })
   }
 
   handleSubmit(event) {
-    console.log(event.target.value)
+    // console.log(event.target.value)
     event.preventDefault()
+    axios
+      .put(
+        'https://starving-artist.herokuapp.com/api/' +
+          this.props.match.params.id +
+          '/edit',
+        {
+          name: this.state.name,
+          about: this.state.about
+        }
+      )
+      .then(res => {
+        console.log(res)
+      })
   }
 
   componentDidMount() {
@@ -42,9 +56,8 @@ class EditStore extends Component {
       )
       .then(res => {
         this.setState({
-          //   products: res.data.products,
-          //   image: res.data.store.image,
-          name: res.data.name
+          name: res.data.name,
+          about: res.data.about
         })
         // console.log(this.state.products)
       })
@@ -52,14 +65,22 @@ class EditStore extends Component {
   render() {
     return (
       <div>
-        <form>
+        <form onSubmit={this.handleSubmit}>
           <label>
             Name:
             <input
+              name="name"
               type="text"
               value={this.state.name}
               onChange={this.handleChange}
               placeholder={this.state.name}
+            />
+            <input
+              name="about"
+              type="text"
+              value={this.state.about}
+              onChange={this.handleChange}
+              placeholder={this.state.about}
             />
             <input type="submit" value="Submit" />
           </label>
