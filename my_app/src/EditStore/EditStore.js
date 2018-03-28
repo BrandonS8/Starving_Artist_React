@@ -1,6 +1,13 @@
 //Create edit component
 import React, { Component } from 'react'
 import axios from 'axios'
+import {
+  BrowserRouter as Router,
+  Link,
+  Route,
+  Redirect,
+  Switch
+} from 'react-router-dom'
 //link store to the edit store component
 //display the data as props of the specific id of the specific store that user is accessing
 //axios post edits to the db array
@@ -10,14 +17,23 @@ class EditStore extends Component {
     super(props)
 
     this.state = {
-      products: [],
+      //   products: [],
       name: ''
+      //   about: ''
     }
+    this.handleChange = this.handleChange.bind(this)
+    this.handleSubmit = this.handleSubmit.bind(this)
   }
 
   handleChange(event) {
     this.setState({ name: event.target.value })
   }
+
+  handleSubmit(event) {
+    console.log(event.target.value)
+    event.preventDefault()
+  }
+
   componentDidMount() {
     axios
       .get(
@@ -26,8 +42,8 @@ class EditStore extends Component {
       )
       .then(res => {
         this.setState({
-          products: res.data.products,
-          image: res.data.store.image,
+          //   products: res.data.products,
+          //   image: res.data.store.image,
           name: res.data.name
         })
         // console.log(this.state.products)
@@ -37,11 +53,16 @@ class EditStore extends Component {
     return (
       <div>
         <form>
-          <input
-            type="text"
-            value={this.state.name}
-            onChange={this.handleChange}
-          />
+          <label>
+            Name:
+            <input
+              type="text"
+              value={this.state.name}
+              onChange={this.handleChange}
+              placeholder={this.state.name}
+            />
+            <input type="submit" value="Submit" />
+          </label>
         </form>
       </div>
     )

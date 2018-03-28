@@ -13,31 +13,32 @@ import StoreList from './StoreList/StoreList'
 import SingleStore from './SingleStore/SingleStore'
 import AddStore from './AddStore/AddStore'
 import ProductDetails from './ProductDetails/ProductDetails'
+import EditStore from './EditStore/EditStore'
 
 class App extends Component {
-  render () {
+  render() {
     // console.log(data[0].name)
     return (
-      <div className='container'>
-        <div className='navBar'>
+      <div className="container">
+        <div className="navBar">
           <nav>
-            <Link to='/'>
+            <Link to="/">
               <h1>Starving Artist</h1>
             </Link>
             <h5>
-              <Link to='/login'>Login</Link>
-              <Link to='/signup'>Signup</Link>
+              <Link to="/login">Login</Link>
+              <Link to="/signup">Signup</Link>
             </h5>
           </nav>
         </div>
         <Switch>
-          <Route path='/add-store' component={AddStore} />
+          <Route path="/add-store" component={AddStore} />
           {/* <Route path='/:id/add' component={AddProduct} /> */}
-          {/* <Route path='/:id/edit' component={EditStore} /> */}
+          <Route path="/:id/edit" component={EditStore} />
           {/* <Route path='/:id/:product/edit' component={EditProduct} /> */}
-          <Route path='/:id/:product' component={ProductDetails} />
-          <Route path='/:id' component={SingleStore} />
-          <Route path='/' component={StoreList} />
+          <Route path="/:id/:product" component={ProductDetails} />
+          <Route path="/:id" component={SingleStore} />
+          <Route path="/" component={StoreList} />
         </Switch>
       </div>
     )
