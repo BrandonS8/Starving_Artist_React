@@ -10,13 +10,14 @@ class AddProduct extends Component {
   onSubmit (e) {
     e.preventDefault()
     console.log(e.target.name.value)
-    axios.post('https://starving-artist.herokuapp.com/api', {
+    axios.post('https://starving-artist.herokuapp.com/api/' + this.props.match.params.id, {
       title: e.target.title.value,
-      name: e.target.name.value,
+      artist: e.target.artist.value,
       description: e.target.description.value,
       price: e.target.price.value,
-      imageUrl: e.tartget.image.value
+      image: e.target.image.value
     }).then(res => console.log(res))
+      .then(() => this.props.history.push('/' + this.props.match.params.id))
   }
 
   render () {
@@ -28,8 +29,8 @@ class AddProduct extends Component {
             <input type='text' name='title' />
           </p>
           <p>
-            <label for='name'>Artitst</label>
-            <input type='text' name='name' />
+            <label for='artist'>Artitst</label>
+            <input type='text' name='artist' />
           </p>
           <p>
             <label for='description'>Description</label>
@@ -40,8 +41,8 @@ class AddProduct extends Component {
             <input type='text' name='price' />
           </p>
           <p>
-            <label for='imageUrl'>Image</label>
-            <input type='text' name='imageUrl' />
+            <label for='image'>Image</label>
+            <input type='text' name='image' />
           </p>
           <br />
           <input type='submit' value='ADD' />

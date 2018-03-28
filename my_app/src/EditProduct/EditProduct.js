@@ -4,9 +4,16 @@ import axios from 'axios'
 class EditProduct extends Component {
   constructor () {
     super()
+    this.state = {
+      title: '',
+      artist: '',
+      description: '',
+      price: 0,
+      image: ''
+
+    }
     this.onSubmit = this.onSubmit.bind(this)
   }
-
 
   componentDidMount () {
     axios.get('https://starving-artist.herokuapp.com/api/' + this.props.match.params.id + '/' + this.props.match.params.product)
@@ -17,17 +24,17 @@ class EditProduct extends Component {
             })
   }
 
-
   onSubmit (e) {
     e.preventDefault()
     console.log(e.target.name.value)
     axios.put('https://starving-artist.herokuapp.com/api', {
       title: e.target.title.value,
-      name: e.target.name.value,
+      artist: e.target.artist.value,
       description: e.target.description.value,
       price: e.target.price.value,
-      imageUrl: e.tartget.image.value
+      image: e.target.image.value
     }).then(res => console.log(res))
+        .then(() => this.props.history.push('/' + this.props.match.params.id + '/' + this.props.match.params.product))
   }
 
   render () {
@@ -39,20 +46,20 @@ class EditProduct extends Component {
             <input type='text' name='title' />
           </p>
           <p>
-            <label for='name'>Artitst</label>
-            <input type='text' name='name' />
+            <label for='artist'>Artitst</label>
+            <input type='text' name='artist' value={this.state.product.artist} />
           </p>
           <p>
             <label for='description'>Description</label>
-            <input type='text' name='description' />
+            <input type='text' name='description' value={this.state.product.description} />
           </p>
           <p>
             <label for='Price'>price</label>
-            <input type='text' name='price' />
+            <input type='text' name='price' value={this.state.product.price} />
           </p>
           <p>
-            <label for='imageUrl'>Image</label>
-            <input type='text' name='imageUrl' />
+            <label for='image'>Image</label>
+            <input type='text' name='image' value={this.state.product.image} />
           </p>
           <br />
           <input type='submit' value='Edit' />

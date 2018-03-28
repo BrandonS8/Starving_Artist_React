@@ -5,7 +5,7 @@ import ProductCard from '../ProductCard/ProductCard'
 import { Link } from 'react-router-dom'
 
 class SingleStore extends Component {
-  constructor(props) {
+  constructor (props) {
     super(props)
 
     this.state = {
@@ -13,7 +13,7 @@ class SingleStore extends Component {
     }
   }
 
-  componentDidMount() {
+  componentDidMount () {
     axios
       .get(
         'https://starving-artist.herokuapp.com/api/' +
@@ -31,7 +31,7 @@ class SingleStore extends Component {
 
   //     1.9. Render the component with JSX
 
-  render() {
+  render () {
     const products = this.state.products.map((product, i) => {
       return (
         <Link to={'/' + this.props.match.params.id + '/' + product._id}>
@@ -48,7 +48,7 @@ class SingleStore extends Component {
     // return { products }
     return (
       <div>
-        <a href='/add-product' className='addProductButton'>Add A Store</a>
+        <a href={'/' + this.props.match.params.id + '/add'} className='addProductButton'>Add A Product</a>
         <h1>{this.state.name}</h1>
         {products}
       </div>
