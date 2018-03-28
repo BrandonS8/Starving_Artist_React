@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import axios from 'axios'
 
 class ProductDetail extends Component {
-  constructor() {
+  constructor () {
     super()
 
     this.state = {
@@ -10,7 +10,7 @@ class ProductDetail extends Component {
     }
   }
 
-  componentDidMount() {
+  componentDidMount () {
     axios
       .get(
         'https://starving-artist.herokuapp.com/api/' +
@@ -25,13 +25,13 @@ class ProductDetail extends Component {
       })
   }
 
-  render() {
+  render () {
     return (
-      <div className="product-preview">
+      <div className='product-preview'>
         <img
           src={this.state.product.image}
           alt={this.state.product.name}
-          className="product-image"
+          className='product-image'
         />
         <h2>{this.state.product.title}</h2>
         <p>By: {this.state.product.artist}</p>
