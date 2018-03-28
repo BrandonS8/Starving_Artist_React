@@ -37,6 +37,7 @@ class ProductDetail extends Component {
         <p>By: {this.state.product.artist}</p>
         <p>{this.state.product.description}</p>
         <p>Price: {this.state.product.price}</p>
+        <a href={'/' + this.props.match.params.id + '/' + this.state.product._id + '/edit'} className='editProductButton'>Edit A Product</a>
       </div>
     )
   }
