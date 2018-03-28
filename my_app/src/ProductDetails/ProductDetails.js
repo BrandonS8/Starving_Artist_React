@@ -12,7 +12,7 @@ class ProductDetail extends Component {
   }
 
   componentDidMount () {
-    axios.get('https://starving-artist.herokuapp.com/api/:storeId/:productId')
+    axios.get('https://starving-artist.herokuapp.com/api/5abaa1b7b29ef80004072fa2/5abaa1b7b29ef80004072fa4')
             .then(response => {
               this.setState({
                 product: response.data
@@ -25,8 +25,9 @@ class ProductDetail extends Component {
       <div className='product-preview'>
         <img src={this.state.product.image} alt={this.state.product.name} className='product-image' />
         <h2>{this.state.product.title}</h2>
-        <h3>{this.state.product.artist}</h3>
-        <p>{this.state.product.description} {this.state.product.price}</p>
+        <p>By: {this.state.product.artist}</p>
+        <p>{this.state.product.description}</p>
+        <p>Price: {this.state.product.price}</p>
       </div>
     )
   }
