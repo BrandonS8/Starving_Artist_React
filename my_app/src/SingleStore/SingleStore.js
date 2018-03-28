@@ -13,29 +13,48 @@ import axios from 'axios'
 class SingleStore extends Component {
   constructor(props) {
     super(props)
-  }
 
-  componentWillMount() {}
+    this.state = {
+      products: []
+    }
+  }
 
   componentDidMount() {
     axios
-      .get('https://starving-artist.herokuapp.com/api/' + this.props.params.id)
-      .then(function(response) {
-        console.log(response)
+      .get(
+        'https://starving-artist.herokuapp.com/api/' +
+          this.props.match.params.id
+      )
+      .then(res => {
+        this.setState({
+          products: res.data.products
+        })
+        console.log(this.state.products)
       })
   }
 
+  // .then(res => {
+  //   this.setState({
+  //     stores: res.data
+  //   })
+  // })
   //     1.8. Enact axios calls that represent what's happening on the server when they delete/add product and edit store.
 
   //     1.9. Render the component with JSX
 
   render() {
-    return <div />
+    const products = this.state.products.map((product, i) => {
+      return (
+        <div>
+          <img src={product.image} alt="image of art" />
+          <h1>{product.title}</h1>
+        </div>
+      )
+    })
+    // return { products }
+    return <div>{products}</div>
   }
 }
-
-SingleStore.propTypes = {}
-
 export default SingleStore
 
 //     1.10. Add CSS to make it visually appealing
