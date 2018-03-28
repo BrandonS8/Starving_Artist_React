@@ -23,7 +23,7 @@ class EditProduct extends Component {
   onSubmit (e) {
     e.preventDefault()
     console.log(e.target.name.value)
-    axios.put('https://starving-artist.herokuapp.com/api', {
+    axios.put('https://starving-artist.herokuapp.com/api/' + this.props.match.params.id + '/' + this.props.match.params.product + '/edit', {
       title: this.state.title,
       artist: this.state.artist,
       description: this.state.description,
