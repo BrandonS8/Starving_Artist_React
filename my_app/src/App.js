@@ -11,30 +11,32 @@ import axios from 'axios'
 import data from './data.json'
 import StoreList from './StoreList/StoreList'
 import SingleStore from './SingleStore/SingleStore'
+import AddStore from './AddStore/AddStore'
 
 class App extends Component {
-  render() {
+  render () {
     // console.log(data[0].name)
     return (
-      <div className="container">
-        <div className="navBar">
+      <div className='container'>
+        <div className='navBar'>
           <nav>
-            <Link to="/">
+            <Link to='/'>
               <h1>Starving Artist</h1>
             </Link>
             <h5>
-              <Link to="/login">Login</Link>
-              <Link to="/signup">Signup</Link>
+              <Link to='/login'>Login</Link>
+              <Link to='/signup'>Signup</Link>
             </h5>
           </nav>
         </div>
         <Switch>
-          {/* making store data available ot landing page component for reusability's sake */}
-          {/* <StoreList /> */}
-          <Route path="/:id" component={SingleStore} />
-          <Route path="/" component={StoreList} />
-          {/* <Route path="/store/add" component={Add} /> */}
-          {/* <Route path="/store/edit" component={Edit} /> */}
+          <Route path='/add-store' component={AddStore} />
+          {/* <Route path='/:id/add' component={AddProduct} /> */}
+          <Route path='/:id/:product' component={ProductDetails} />
+          {/* <Route path='/:id/:product/edit' component={EditProduct} /> */}
+          <Route path='/:id' component={SingleStore} />
+          {/* <Route path='/:id/edit' component={EditStore} /> */}
+          <Route path='/' component={StoreList} />
         </Switch>
       </div>
     )
