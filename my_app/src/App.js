@@ -9,7 +9,7 @@ import {
 } from 'react-router-dom'
 import axios from 'axios'
 import data from './data.json'
-import ProductDetails from './ProductDetails/ProductDetails'
+import ProductDetail from './ProductDetails/ProductDetails'
 
 class App extends Component {
   render () {
@@ -30,7 +30,7 @@ class App extends Component {
           </div>
           <Switch>
             {/* making store data available ot landing page component for reusability's sake */}
-            <ProductDetails />
+            <ProductDetail />
             {/* <Route path="/store" component={Store} /> */}
             {/* <Route path="/store/show" component={Show} /> */}
             {/* <Route path="/store/add" component={Add} /> */}
