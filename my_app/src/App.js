@@ -29,7 +29,7 @@ class App extends Component {
           </div>
           <Switch>
             {/* making store data available ot landing page component for reusability's sake */}
-            <StoreList />
+            {/* <StoreList /> */}
             {/* <Route path="/store" component={Store} /> */}
             {/* <Route path="/store/show" component={Show} /> */}
             {/* <Route path="/store/add" component={Add} /> */}
