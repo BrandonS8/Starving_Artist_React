@@ -2,13 +2,22 @@ import React, { Component } from 'react'
 import axios from 'axios'
 
 class ProductDetail extends Component {
-  constructor (props) {
-    super(props)
+  constructor () {
+    super()
 
     this.state = {
-      product: this.props.products[0]
+      product: []
 
     }
+  }
+
+  componentDidMount () {
+    axios.get('https://starving-artist.herokuapp.com/api/:storeId/:productId')
+            .then(response => {
+              this.setState({
+                product: response.data
+              })
+            })
   }
 
   render () {
@@ -23,13 +32,6 @@ class ProductDetail extends Component {
   }
 }
 
-componentDidMount () {
-    axios.get('http://localhost:3001/api/storeid/product')
-            .then(response => {
-              this.setState({
-                dogs: response.data
-              })
-            })
-  }
+
 
 export default ProductDetail
