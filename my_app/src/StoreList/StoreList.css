@@ -1,3 +1,23 @@
+.storeListContainer{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.addStoreButton{
+  text-decoration: none;
+  color: #fff;
+  background: lightslategrey;
+  padding: 10px;
+  margin: 10px;
+  border-radius: 15px;
+}
+.addStoreButton:hover{
+  text-decoration: none;
+  color: #fff;
+  transform: rotateX(25deg);
+}
+
 .storeList{
   display: flex;
   justify-content: center;

@@ -10,11 +10,16 @@
   border: 1px solid lightgrey;
   position: relative;
 }
+.storeCard a {
+  text-decoration: none;
+  color: #000;
+}
 .storeCardName{
   position: absolute;
   top: 0;
+  left: 0;
   background: lightgrey;
-  width: 250px;
+  width: 100%;
   text-align: center;
 }
 .storeCardImage{

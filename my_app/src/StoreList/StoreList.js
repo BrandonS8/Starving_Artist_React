@@ -26,9 +26,11 @@ class StoreList extends Component {
       return <StoreCard key={i} image={store.products[0] ? store.products[0].image : 'https://i.vimeocdn.com/portrait/1274237_640x640'} name={store.name} id={store._id} />
     })
     return (
-      <div className='storeList'>
+      <div className='storeListContainer'>
         <a href='/add-store' className='addStoreButton'>Add A Store</a>
-        {stores}
+        <div className='storeList'>
+          {stores}
+        </div>
       </div>
     )
   }
