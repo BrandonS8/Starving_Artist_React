@@ -48,7 +48,7 @@ class SingleStore extends Component {
     // return { products }
     return (
       <div>
-        <Link to="/:id/edit">
+        <Link to={this.props.match.params.id + '/edit'}>
           <h3>Edit this Store</h3>
         </Link>
         <h1>{this.state.name}</h1>
