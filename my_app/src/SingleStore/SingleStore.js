@@ -1,14 +1,8 @@
 // Create Store Component
-//     1.1. Create a link to the new component in App
-//     1.2. Import server through axios
-//     1.3. Import axios
-//     1.4. Import react
 import React, { Component } from 'react'
-import PropTypes from 'prop-types'
 import axios from 'axios'
-//     1.5. Create a Store Class
-//     1.6. Use props to call data
-//     1.7. Set storeProducts equal to the array of products from the server data so that when someone adds or deletes a product in the store, it accesses the server side database.
+import ProductCard from '../ProductCard/ProductCard'
+import { Link } from 'react-router-dom'
 
 class SingleStore extends Component {
   constructor(props) {
@@ -29,15 +23,9 @@ class SingleStore extends Component {
         this.setState({
           products: res.data.products
         })
-        console.log(this.state.products)
+        // console.log(this.state.products)
       })
   }
-
-  // .then(res => {
-  //   this.setState({
-  //     stores: res.data
-  //   })
-  // })
   //     1.8. Enact axios calls that represent what's happening on the server when they delete/add product and edit store.
 
   //     1.9. Render the component with JSX
@@ -45,10 +33,15 @@ class SingleStore extends Component {
   render() {
     const products = this.state.products.map((product, i) => {
       return (
-        <div>
-          <img src={product.image} alt="image of art" />
-          <h1>{product.title}</h1>
-        </div>
+        <Link to={'/' + this.props.match.params.id + '/' + product._id}>
+          <ProductCard
+            key={i}
+            title={product.title}
+            image={product.image}
+            price={product.price}
+            id={product._id}
+          />
+        </Link>
       )
     })
     // return { products }
