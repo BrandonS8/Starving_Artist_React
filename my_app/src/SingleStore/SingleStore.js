@@ -48,6 +48,7 @@ class SingleStore extends Component {
     // return { products }
     return (
       <div>
+        <a href='/add-product' className='addProductButton'>Add A Store</a>
         <h1>{this.state.name}</h1>
         {products}
       </div>

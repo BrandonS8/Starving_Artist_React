@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import axios from 'axios'
 
-class AddProduct extends Component {
+class EditProduct extends Component {
   constructor () {
     super()
     this.onSubmit = this.onSubmit.bind(this)
@@ -16,8 +16,6 @@ class AddProduct extends Component {
               })
             })
   }
-
-
 
 
   onSubmit (e) {
@@ -57,11 +55,11 @@ class AddProduct extends Component {
             <input type='text' name='imageUrl' />
           </p>
           <br />
-          <input type='submit' value='ADD' />
+          <input type='submit' value='Edit' />
         </form>
       </div>
     )
   }
 }
 
-export default AddProduct
+export default EditProduct

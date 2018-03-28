@@ -13,6 +13,9 @@ import StoreList from './StoreList/StoreList'
 import SingleStore from './SingleStore/SingleStore'
 import AddStore from './AddStore/AddStore'
 import ProductDetails from './ProductDetails/ProductDetails'
+import EditProduct from './EditProduct/EditProduct'
+import AddProduct from './AddProduct/AddProduct'
+
 
 class App extends Component {
   render () {
@@ -32,9 +35,9 @@ class App extends Component {
         </div>
         <Switch>
           <Route path='/add-store' component={AddStore} />
-          {/* <Route path='/:id/add' component={AddProduct} /> */}
+          <Route path='/:id/add' component={AddProduct} />
           {/* <Route path='/:id/edit' component={EditStore} /> */}
-          {/* <Route path='/:id/:product/edit' component={EditProduct} /> */}
+          <Route path='/:id/:product/edit' component={EditProduct} />
           <Route path='/:id/:product' component={ProductDetails} />
           <Route path='/:id' component={SingleStore} />
           <Route path='/' component={StoreList} />
