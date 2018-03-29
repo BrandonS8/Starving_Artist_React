@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
 import axios from 'axios'
 import UploadFile from '../UploadFile/UploadFile'
-import './AddProduct.css'
+import './Forms.css'
+
 class AddProduct extends Component {
   constructor () {
     super()
@@ -34,10 +35,11 @@ class AddProduct extends Component {
 
   render () {
     return (
-      <div className='container'>
+      <div className='container-form'>
+        
         <form onSubmit={this.onSubmit}>
 
-          <label for='title'>Product Title</label>
+          <label for='title'>Title</label>
           <input type='text' name='title' />
 
           <label for='artist'>Artitst</label>
@@ -46,14 +48,15 @@ class AddProduct extends Component {
           <label for='description'>Description</label>
           <input type='text' name='description' />
 
-          <label for='Price'>price</label>
+          <label for='Price'>Price</label>
           <input type='number' name='price' />
 
-            Image:
+            Image
         <UploadFile setImage={this.setImage} />
 
           <input type='submit' value='ADD' />
         </form>
+        
         <div className='previewImage'>
           {this.state.image != '' ? <img src={this.state.image} /> : <p>No Image Set</p>}
         </div>
