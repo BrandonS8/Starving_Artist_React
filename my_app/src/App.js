@@ -27,8 +27,8 @@ class App extends Component {
           </Link>
           <div className="navRight">
             <Link to="/add-Store">Create Store</Link>
-            <Link to="/login">Login</Link>
-            <Link to="/signup">Signup</Link>
+            {/* <Link to="/login">Login</Link>
+            <Link to="/signup">Signup</Link> */}
           </div>
         </nav>
 
