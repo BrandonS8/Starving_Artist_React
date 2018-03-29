@@ -23,8 +23,15 @@ class App extends Component {
       <div className="container">
         <nav>
           <Link to="/" className="text-decoration">
-            <h1 className="pageTitle">Starving Artist</h1>
+            <div className="pageTitle">
+              <h1>Starving Artist</h1>
+              <h3>
+                A free platform for student-artists to sell their work from
+                local universities in the DC area.
+              </h3>
+            </div>
           </Link>
+
           <div className="navRight">
             <Link to="/add-Store">Create Store</Link>
             {/* <Link to="/login">Login</Link>
