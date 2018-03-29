@@ -12,9 +12,9 @@ class UploadFile extends Component {
 
   handleUpload (e) {
     e.preventDefault()
-    if (e.target.imageFile.files.length > 0) {
+    if (e.target.files.length > 0) {
       const fileData = new FormData()
-      fileData.append('file', e.target.imageFile.files[0])
+      fileData.append('file', e.target.files[0])
       fileData.append('filename', `image${Math.floor((Math.random() * (1000 - 1) + 1)).toFixed(0)}`)
       // e.target.imageFile.files[0].name
       // axios post request
@@ -41,10 +41,7 @@ class UploadFile extends Component {
   render () {
     return (
       <div>
-        <form onSubmit={this.handleUpload}>
-          <input type='file' accept='image/jpg' name='imageFile' required />
-          <input type='submit' value='SET IMAGE' />
-        </form>
+        <input type='file' accept='image/jpg' name='imageFile' onChange={this.handleUpload} required />
       </div>
     )
   }
