@@ -1,7 +1,12 @@
 import React, { Component } from 'react'
 import axios from 'axios'
+<<<<<<< HEAD
 import UploadFile from '../UploadFile/UploadFile'
 import './AddProduct.css'
+=======
+import Forms from './Forms.css'
+
+>>>>>>> css-stuff
 class AddProduct extends Component {
   constructor () {
     super()
@@ -34,8 +39,9 @@ class AddProduct extends Component {
 
   render () {
     return (
-      <div>
+      <div className='container'>
         <form onSubmit={this.onSubmit}>
+<<<<<<< HEAD
           <p>
             <label for='title'>Product Title</label>
             <input type='text' name='title' />
@@ -61,6 +67,26 @@ class AddProduct extends Component {
         <div className='previewImage'>
           {this.state.image != '' ? <img src={this.state.image} /> : <p>No Image Set</p>}
         </div>
+=======
+
+          <label for='title'>Title</label>
+          <input type='text' name='title' />
+
+          <label for='artist'>Artitst</label>
+          <input type='text' name='artist' />
+
+          <label for='description'>Description</label>
+          <input type='text' name='description' />
+
+          <label for='Price'>Price</label>
+          <input type='text' name='price' />
+
+          <label for='image'>Image</label>
+          <input type='text' name='image' />
+          <input type='submit' value='ADD' />
+        </form>
+       
+>>>>>>> css-stuff
       </div>
     )
   }

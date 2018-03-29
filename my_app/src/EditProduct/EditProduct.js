@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import axios from 'axios'
+import Forms from '../AddProduct/Forms.css'
 
 class EditProduct extends Component {
   constructor () {
@@ -66,33 +67,26 @@ class EditProduct extends Component {
     return (
       <div>
         <form onSubmit={this.onSubmit}>
-          <p>
-            <label for='title'>Product Title</label>
-            <input type='text' name='title' value={this.state.title} onChange={this.handleChange} />
-          </p>
-          <p>
-            <label for='artist'>Artitst</label>
-            <input type='text' name='artist' value={this.state.artist} onChange={this.handleChange} />
-          </p>
-          <p>
-            <label for='description'>Description</label>
-            <input type='text' name='description' value={this.state.description} onChange={this.handleChange} />
-          </p>
-          <p>
-            <label for='Price'>price</label>
-            <input type='text' name='price' value={this.state.price} onChange={this.handleChange} />
-          </p>
-          <p>
-            <label for='image'>Image</label>
-            <input type='text' name='image' value={this.state.image} onChange={this.handleChange} />
-          </p>
-          <br />
+
+          <label for='title'>Product Title</label>
+          <input type='text' name='title' value={this.state.title} onChange={this.handleChange} />
+
+          <label for='artist'>Artitst</label>
+          <input type='text' name='artist' value={this.state.artist} onChange={this.handleChange} />
+
+          <label for='description'>Description</label>
+          <input type='text' name='description' value={this.state.description} onChange={this.handleChange} />
+
+          <label for='Price'>price</label>
+          <input type='text' name='price' value={this.state.price} onChange={this.handleChange} />
+
+          <label for='image'>Image</label>
+          <input type='text' name='image' value={this.state.image} onChange={this.handleChange} />
+
           <input type='submit' value='Edit' />
+          <button onClick={this.handleDelete}>Delete Product</button>
         </form>
-        <br />
-        <button onClick={this.handleDelete}>
-          Delete Product
-        </button>
+
       </div>
     )
   }

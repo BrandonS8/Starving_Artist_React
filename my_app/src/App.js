@@ -20,7 +20,6 @@ import AddProduct from './AddProduct/AddProduct'
 class App extends Component {
   render () {
     return (
-<<<<<<< HEAD
       <div className="container">
         <nav>
           <Link to="/" className="text-decoration">
@@ -33,19 +32,6 @@ class App extends Component {
           </div>
         </nav>
 
-=======
-      <div className='container'>
-        <div className='navBar'>
-          <nav>
-            <Link to='/' className='text-decoration'>
-              <h1 className='pageTitle'>Starving Artist</h1>
-            </Link>
-            <Link to='/add-Store' className='text-decoration-right'>Create Store</Link>
-            <Link to='/login' className='text-decoration-right'>Login</Link>
-            <Link to='/signup' className='text-decoration-right'>Signup</Link>
-          </nav>
-        </div>
->>>>>>> accfe8d5eb64594e03a813be5553039f3cee53e2
         <Switch>
           <Route path='/add-store' component={AddStore} />
           <Route path='/:id/add' component={AddProduct} />
