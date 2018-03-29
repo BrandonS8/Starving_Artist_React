@@ -16,8 +16,6 @@ import ProductDetails from './ProductDetails/ProductDetails'
 import EditStore from './EditStore/EditStore'
 import EditProduct from './EditProduct/EditProduct'
 import AddProduct from './AddProduct/AddProduct'
-// REMOVE UPLOAD BEFORE MERGE
-import UploadFile from './UploadFile/UploadFile'
 
 class App extends Component {
   render () {
@@ -42,8 +40,7 @@ class App extends Component {
           <Route path='/:id/:product/edit' component={EditProduct} />
           <Route path='/:id/:product' component={ProductDetails} />
           <Route path='/:id' component={SingleStore} />
-          <Route path='/' component={UploadFile} />
-          {/* CHANGE / BACK TO STORELIST */}
+          <Route path='/' component={StoreList} />
         </Switch>
       </div>
     )

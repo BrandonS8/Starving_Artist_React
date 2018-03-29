@@ -27,10 +27,10 @@ class UploadFile extends Component {
         this.setState({
           imageUrl: `https://starving-artist.herokuapp.com/${res.data.file}`
         })
-        .then(() => {
-          this.props.setImage(this.state.imageUrl)
-        })
       })
+          .then(() => {
+            this.props.setImage(this.state.imageUrl)
+          })
     } else {
       console.log(`looks like the required field didn't stop your empty input, too bad I did.`)
     }
@@ -43,7 +43,7 @@ class UploadFile extends Component {
       <div>
         <form onSubmit={this.handleUpload}>
           <input type='file' accept='image/jpg' name='imageFile' required />
-          <input type='submit' value='Submit' />
+          <input type='submit' value='SET IMAGE' />
         </form>
       </div>
     )
