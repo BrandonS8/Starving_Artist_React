@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import axios from 'axios'
+import './ProductDetails.css'
 
 class ProductDetail extends Component {
   constructor () {
@@ -33,13 +34,15 @@ class ProductDetail extends Component {
           alt={this.state.product.name}
           className='product-image'
         />
-        <h2>{this.state.product.title}</h2>
-        <p>By: {this.state.product.artist}</p>
-        <p>{this.state.product.description}</p>
-        <p>Price: {this.state.product.price}</p>
+        <div className='product-info'>
+          <h1>{this.state.product.title}</h1>
+          <h2>By: {this.state.product.artist}</h2>
+          <p className='product-desc'>"{this.state.product.description}"</p>
+          <p className='product-price'>${this.state.product.price}</p>
+          <a href={'/' + this.props.match.params.id + '/' + this.state.product._id + '/edit'}
+            className='editProductButton'>Edit Product</a>
+        </div>
 
-        <a href={'/' + this.props.match.params.id + '/' + this.state.product._id + '/edit'}
-          className='editProductButton'>Edit A Product</a>
       </div>
     )
   }
