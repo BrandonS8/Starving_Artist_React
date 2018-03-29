@@ -13,25 +13,23 @@ import {
 // axios post edits to the db array
 
 class EditStore extends Component {
-  constructor (props) {
+  constructor(props) {
     super(props)
 
     this.state = {
-      //   products: [],
       name: '',
       about: ''
-      //   about: ''
     }
     this.handleChange = this.handleChange.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this)
     this.handleDelete = this.handleDelete.bind(this)
   }
 
-  handleChange (event) {
+  handleChange(event) {
     this.setState({ [event.target.name]: event.target.value })
   }
 
-  handleSubmit (event) {
+  handleSubmit(event) {
     // console.log(event.target.value)
     event.preventDefault()
     axios
@@ -39,18 +37,18 @@ class EditStore extends Component {
         'https://starving-artist.herokuapp.com/api/' +
           this.props.match.params.id +
           '/edit',
-      {
-        name: this.state.name,
-        about: this.state.about
-      }
+        {
+          name: this.state.name,
+          about: this.state.about
+        }
       )
       .then(() => this.props.history.push('/' + this.props.match.params.id))
       .then(res => {
-        console.log(res)
+        // console.log(res)
       })
   }
 
-  componentDidMount () {
+  componentDidMount() {
     axios
       .get(
         'https://starving-artist.herokuapp.com/api/' +
@@ -67,10 +65,13 @@ class EditStore extends Component {
 
   handleDelete(e) {
     e.preventDefault()
-    console.log(this.props.match.params.id)
-    axios.delete(
-      'https://starving-artist.herokuapp.com/api/' + this.props.match.params.id
-    )
+    // console.log(this.props.match.params.id)
+    axios
+      .delete(
+        'https://starving-artist.herokuapp.com/api/' +
+          this.props.match.params.id
+      )
+      .then(() => this.props.history.push('/'))
   }
 
   render() {
@@ -80,20 +81,20 @@ class EditStore extends Component {
           <label>
             Name:
             <input
-              name='name'
-              type='text'
+              name="name"
+              type="text"
               value={this.state.name}
               onChange={this.handleChange}
               placeholder={this.state.name}
             />
             <input
-              name='about'
-              type='text'
+              name="about"
+              type="text"
               value={this.state.about}
               onChange={this.handleChange}
               placeholder={this.state.about}
             />
-            <input type='submit' value='Submit' />
+            <input type="submit" value="Submit" />
           </label>
         </form>
         <button onClick={this.handleDelete}>
