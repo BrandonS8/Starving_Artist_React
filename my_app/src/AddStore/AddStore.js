@@ -1,5 +1,8 @@
 import React, { Component } from 'react'
 import axios from 'axios'
+import Forms from '../AddProduct/Forms.css'
+
+
 class AddStore extends Component {
   constructor () {
     super()
@@ -24,7 +27,7 @@ class AddStore extends Component {
         <form onSubmit={this.onSubmit}>
           <input type='text' name='name' placeholder='name' />
           <input type='text' name='about' placeholder='about' />
-          <input type='submit' value='ADD' />
+          <input type='submit' value='Create' />
         </form>
       </div>
     )

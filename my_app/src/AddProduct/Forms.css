@@ -1,3 +1,7 @@
+.container {
+  margin-top: 75px;
+}
+
 form {
   padding: 10px 40px;
   display: flex;
@@ -41,3 +45,8 @@ button {
   border-radius: 4px;
   cursor: pointer;
 }
+
+.previewImage img{
+  width: 250px;
+  height: 250px;
+  }

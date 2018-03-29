@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import axios from 'axios'
 import UploadFile from '../UploadFile/UploadFile'
-import './AddProduct.css'
+import './Forms.css'
 class AddProduct extends Component {
   constructor () {
     super()
@@ -49,7 +49,7 @@ class AddProduct extends Component {
           <label for='Price'>price</label>
           <input type='number' name='price' />
 
-            Image:
+            Image
         <UploadFile setImage={this.setImage} />
 
           <input type='submit' value='ADD' />
