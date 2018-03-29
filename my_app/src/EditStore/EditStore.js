@@ -1,4 +1,4 @@
-//Create edit component
+// Create edit component
 import React, { Component } from 'react'
 import axios from 'axios'
 import {
@@ -8,6 +8,9 @@ import {
   Redirect,
   Switch
 } from 'react-router-dom'
+// link store to the edit store component
+// display the data as props of the specific id of the specific store that user is accessing
+// axios post edits to the db array
 
 class EditStore extends Component {
   constructor(props) {
