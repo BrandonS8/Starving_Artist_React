@@ -18,9 +18,10 @@
   position: absolute;
   top: 0;
   left: 0;
-  background: lightgrey;
+  /* background: rgba(12, 114, 133, 0.404); */
   width: 100%;
   text-align: center;
+  margin-top: 0px;
 }
 .storeCardImage{
   margin-top: 10%;
