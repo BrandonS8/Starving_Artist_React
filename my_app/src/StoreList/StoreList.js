@@ -37,9 +37,9 @@ class StoreList extends Component {
     })
     return (
       <div className="storeListContainer">
-        <a href="/add-store" className="addStoreButton">
+        {/* <a href="/add-store" className="addStoreButton">
           Add A Store
-        </a>
+        </a> */}
         <div className="storeList">{stores}</div>
       </div>
     )
