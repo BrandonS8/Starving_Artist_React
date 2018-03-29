@@ -18,7 +18,7 @@ import EditProduct from './EditProduct/EditProduct'
 import AddProduct from './AddProduct/AddProduct'
 
 class App extends Component {
-  render () {
+  render() {
     return (
       <div className="container">
         <nav>
@@ -27,19 +27,19 @@ class App extends Component {
           </Link>
           <div className="navRight">
             <Link to="/add-Store">Create Store</Link>
-            <Link to="/login">Login</Link>
-            <Link to="/signup">Signup</Link>
+            {/* <Link to="/login">Login</Link>
+            <Link to="/signup">Signup</Link> */}
           </div>
         </nav>
 
         <Switch>
-          <Route path='/add-store' component={AddStore} />
-          <Route path='/:id/add' component={AddProduct} />
-          <Route path='/:id/edit' component={EditStore} />
-          <Route path='/:id/:product/edit' component={EditProduct} />
-          <Route path='/:id/:product' component={ProductDetails} />
-          <Route path='/:id' component={SingleStore} />
-          <Route path='/' component={StoreList} />
+          <Route path="/add-store" component={AddStore} />
+          <Route path="/:id/add" component={AddProduct} />
+          <Route path="/:id/edit" component={EditStore} />
+          <Route path="/:id/:product/edit" component={EditProduct} />
+          <Route path="/:id/:product" component={ProductDetails} />
+          <Route path="/:id" component={SingleStore} />
+          <Route path="/" component={StoreList} />
         </Switch>
       </div>
     )
