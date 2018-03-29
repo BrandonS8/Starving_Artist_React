@@ -29,9 +29,14 @@ nav {
 .text-decoration {
   margin-top: 0px;
   width: 75%;
-  font-family: 'Rock Salt', cursive;
-  font-size: 20px;
   color: black;
   margin: 0px;
   text-decoration: none;
+}
+
+.pageTitle {
+  font-family: 'Rock Salt', cursive;
+  font-size: 50px;
+  margin-top: -10px;
+  color: #D62A87;
 }
