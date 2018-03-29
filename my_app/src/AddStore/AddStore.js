@@ -23,11 +23,11 @@ class AddStore extends Component {
 
   render () {
     return (
-      <div>
+      <div className='container-form'>
         <form onSubmit={this.onSubmit}>
-          <input type='text' name='name' placeholder='name' />
-          <input type='text' name='about' placeholder='about' />
-          <input type='submit' value='Create' />
+          <input type='text' name='name' placeholder='name' className='width'/>
+          <input type='text' name='about' placeholder='about' className='width' />
+          <input type='submit' value='Create'className='btn-width' />
         </form>
       </div>
     )
