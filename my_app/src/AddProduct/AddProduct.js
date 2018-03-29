@@ -1,9 +1,14 @@
 import React, { Component } from 'react'
 import axios from 'axios'
-
+import UploadFile from '../UploadFile/UploadFile'
+import './AddProduct.css'
 class AddProduct extends Component {
   constructor () {
     super()
+    this.state = {
+      image: ''
+    }
+    this.setImage = this.setImage.bind(this)
     this.onSubmit = this.onSubmit.bind(this)
   }
 
@@ -15,9 +20,16 @@ class AddProduct extends Component {
       artist: e.target.artist.value,
       description: e.target.description.value,
       price: e.target.price.value,
-      image: e.target.image.value
+      image: this.state.image
     }).then(res => console.log(res))
       .then(() => this.props.history.push('/' + this.props.match.params.id))
+  }
+
+  setImage (url) {
+    this.setState({
+      image: url
+    })
+    console.log(this.state.image)
   }
 
   render () {
@@ -38,15 +50,17 @@ class AddProduct extends Component {
           </p>
           <p>
             <label for='Price'>price</label>
-            <input type='text' name='price' />
+            <input type='number' name='price' />
           </p>
           <p>
-            <label for='image'>Image</label>
-            <input type='text' name='image' />
+            Image:
+        <UploadFile setImage={this.setImage} />
           </p>
-          <br />
           <input type='submit' value='ADD' />
         </form>
+        <div className='previewImage'>
+          {this.state.image != '' ? <img src={this.state.image} /> : <p>No Image Set</p>}
+        </div>
       </div>
     )
   }
