@@ -65,10 +65,10 @@ class EditProduct extends Component {
 
   render () {
     return (
-      <div>
+      <div className='container-form'>
         <form onSubmit={this.onSubmit}>
 
-          <label for='title'>Product Title</label>
+          <label for='title'>Title</label>
           <input type='text' name='title' value={this.state.title} onChange={this.handleChange} />
 
           <label for='artist'>Artitst</label>
@@ -77,7 +77,7 @@ class EditProduct extends Component {
           <label for='description'>Description</label>
           <input type='text' name='description' value={this.state.description} onChange={this.handleChange} />
 
-          <label for='Price'>price</label>
+          <label for='Price'>Price</label>
           <input type='text' name='price' value={this.state.price} onChange={this.handleChange} />
 
           <label for='image'>Image</label>
