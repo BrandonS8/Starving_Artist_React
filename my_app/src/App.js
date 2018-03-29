@@ -24,13 +24,12 @@ class App extends Component {
       <div className="container">
         <div className="navBar">
           <nav>
-            <Link to="/">
+            <Link to="/" className="text-decoration">
               <h1>Starving Artist</h1>
             </Link>
-            <h5>
-              <Link to="/login">Login</Link>
-              <Link to="/signup">Signup</Link>
-            </h5>
+             <Link to="/add-Store" className="text-decoration-right">Create Store</Link>
+               <Link to="/login" className="text-decoration-right">Login</Link>
+               <Link to="/signup" className="text-decoration-right">Signup</Link>
           </nav>
         </div>
         <Switch>
