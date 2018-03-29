@@ -9,11 +9,13 @@ class AddStore extends Component {
   onSubmit (e) {
     e.preventDefault()
     console.log(e.target.name.value)
-    axios.post('https://starving-artist.herokuapp.com/api', {
-      name: e.target.name.value,
-      about: e.target.about.value
-    }).then(res => console.log(res))
-    .then(() => this.props.history.push('/'))
+    axios
+      .post('https://starving-artist.herokuapp.com/api', {
+        name: e.target.name.value,
+        about: e.target.about.value
+      })
+      .then(res => console.log(res))
+      .then(() => this.props.history.push('/'))
   }
 
   render () {
