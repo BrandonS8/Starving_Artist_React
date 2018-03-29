@@ -16,6 +16,7 @@ import ProductDetails from './ProductDetails/ProductDetails'
 import EditStore from './EditStore/EditStore'
 import EditProduct from './EditProduct/EditProduct'
 import AddProduct from './AddProduct/AddProduct'
+import Main from './MainTest/Main'
 
 class App extends Component {
   render() {
@@ -42,6 +43,7 @@ class App extends Component {
           <Route path="/:id" component={SingleStore} />
           <Route path="/" component={StoreList} />
         </Switch>
+        <Main />
       </div>
     )
   }
