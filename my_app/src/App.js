@@ -23,16 +23,17 @@ class App extends Component {
     // console.log(data[0].name)
     return (
       <div className="container">
-        <div className="navBar">
-          <nav>
-            <Link to="/" className="text-decoration">
-              <h1 className="pageTitle">Starving Artist</h1>
-            </Link>
-             <Link to="/add-Store" className="text-decoration-right">Create Store</Link>
-               <Link to="/login" className="text-decoration-right">Login</Link>
-               <Link to="/signup" className="text-decoration-right">Signup</Link>
-          </nav>
-        </div>
+        <nav>
+          <Link to="/" className="text-decoration">
+            <h1 className="pageTitle">Starving Artist</h1>
+          </Link>
+          <div className="navRight">
+            <Link to="/add-Store">Create Store</Link>
+            <Link to="/login">Login</Link>
+            <Link to="/signup">Signup</Link>
+          </div>
+        </nav>
+
         <Switch>
           <Route path="/add-store" component={AddStore} />
           <Route path="/:id/add" component={AddProduct} />
