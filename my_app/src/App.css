@@ -1,15 +1,10 @@
 /* * {
   border: 1px solid red;
 } */
-
-body {
-  width: 100%;
-}
 nav {
   background-image: url('./public/colorfulcity.jpg');
   background-size: contain;
   margin: 0px;
-  /* padding: 0px 20px 0px 20px; */
   display: flex;
   /* flex-wrap: nowrap; */
   width: 100%;
