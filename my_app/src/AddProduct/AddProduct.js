@@ -1,12 +1,7 @@
 import React, { Component } from 'react'
 import axios from 'axios'
-<<<<<<< HEAD
 import UploadFile from '../UploadFile/UploadFile'
 import './AddProduct.css'
-=======
-import Forms from './Forms.css'
-
->>>>>>> css-stuff
 class AddProduct extends Component {
   constructor () {
     super()
@@ -41,35 +36,8 @@ class AddProduct extends Component {
     return (
       <div className='container'>
         <form onSubmit={this.onSubmit}>
-<<<<<<< HEAD
-          <p>
-            <label for='title'>Product Title</label>
-            <input type='text' name='title' />
-          </p>
-          <p>
-            <label for='artist'>Artitst</label>
-            <input type='text' name='artist' />
-          </p>
-          <p>
-            <label for='description'>Description</label>
-            <input type='text' name='description' />
-          </p>
-          <p>
-            <label for='Price'>price</label>
-            <input type='number' name='price' />
-          </p>
-          <p>
-            Image:
-        <UploadFile setImage={this.setImage} />
-          </p>
-          <input type='submit' value='ADD' />
-        </form>
-        <div className='previewImage'>
-          {this.state.image != '' ? <img src={this.state.image} /> : <p>No Image Set</p>}
-        </div>
-=======
 
-          <label for='title'>Title</label>
+          <label for='title'>Product Title</label>
           <input type='text' name='title' />
 
           <label for='artist'>Artitst</label>
@@ -78,15 +46,17 @@ class AddProduct extends Component {
           <label for='description'>Description</label>
           <input type='text' name='description' />
 
-          <label for='Price'>Price</label>
-          <input type='text' name='price' />
+          <label for='Price'>price</label>
+          <input type='number' name='price' />
 
-          <label for='image'>Image</label>
-          <input type='text' name='image' />
+            Image:
+        <UploadFile setImage={this.setImage} />
+
           <input type='submit' value='ADD' />
         </form>
-       
->>>>>>> css-stuff
+        <div className='previewImage'>
+          {this.state.image != '' ? <img src={this.state.image} /> : <p>No Image Set</p>}
+        </div>
       </div>
     )
   }
