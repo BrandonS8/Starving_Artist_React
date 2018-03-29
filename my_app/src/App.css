@@ -3,7 +3,7 @@
 } */
 nav {
   background-image: url('./public/colorfulcity.jpg');
-  background-size: contain;
+  background-size: cover;
   margin: 0px;
   display: flex;
   /* flex-wrap: nowrap; */
@@ -49,4 +49,16 @@ nav {
   margin-top: -30px;
 }
 
+.imgSizeControl {
+  height: 100px;
+  width: 100px;
+}
  
+.ProductCardContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  height: 250px;
+  width: 250px;
+  border: 1px solid lightgray;
+}
