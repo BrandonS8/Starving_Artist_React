@@ -22,8 +22,8 @@ class AddStore extends Component {
     return (
       <div>
         <form onSubmit={this.onSubmit}>
-          <input type='text' name='name' placeholder='name' required />
-          <input type='text' name='about' placeholder='about' required />
+          <input type='text' name='name' placeholder='name' />
+          <input type='text' name='about' placeholder='about' />
           <input type='submit' value='ADD' />
         </form>
       </div>

@@ -14,6 +14,7 @@ class EditProduct extends Component {
     }
     this.onSubmit = this.onSubmit.bind(this)
     this.handleChange = this.handleChange.bind(this)
+    this.handleDelete = this.handleDelete.bind(this)
   }
 
   handleChange (event) {
@@ -23,18 +24,22 @@ class EditProduct extends Component {
   onSubmit (e) {
     e.preventDefault()
     console.log(e.target.name.value)
-    axios.put('https://starving-artist.herokuapp.com/api/' + this.props.match.params.id + '/' + this.props.match.params.product + '/edit', {
-      title: this.state.title,
-      artist: this.state.artist,
-      description: this.state.description,
-      price: this.state.price,
-      image: this.state.image
-    }).then(res => console.log(res))
-        .then(() => this.props.history.push('/' + this.props.match.params.id + '/' + this.props.match.params.product))
+    axios.put('https://starving-artist.herokuapp.com/api/' + this.props.match.params.id +
+             '/' + this.props.match.params.product + '/edit', {
+
+               title: this.state.title,
+               artist: this.state.artist,
+               description: this.state.description,
+               price: this.state.price,
+               image: this.state.image
+             }).then(res => console.log(res))
+        .then(() => this.props.history.push('/' + this.props.match.params.id +
+        '/' + this.props.match.params.product))
   }
 
   componentDidMount () {
-    axios.get('https://starving-artist.herokuapp.com/api/' + this.props.match.params.id + '/' + this.props.match.params.product)
+    axios.get('https://starving-artist.herokuapp.com/api/' + this.props.match.params.id +
+              '/' + this.props.match.params.product)
             .then(response => {
               this.setState({
                 title: response.data.title,
@@ -44,6 +49,17 @@ class EditProduct extends Component {
                 image: response.data.image
               })
             })
+  }
+
+  handleDelete (e) {
+    e.preventDefault()
+    axios
+      .delete(
+        'https://starving-artist.herokuapp.com/api/' +
+        this.props.match.params.id + '/' +
+        this.props.match.params.product
+      )
+      .then(() => this.props.history.push('/' + this.props.match.params.id))
   }
 
   render () {
@@ -73,6 +89,10 @@ class EditProduct extends Component {
           <br />
           <input type='submit' value='Edit' />
         </form>
+        <br />
+        <button onClick={this.handleDelete}>
+          Delete Product
+        </button>
       </div>
     )
   }
