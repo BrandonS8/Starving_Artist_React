@@ -1,14 +1,7 @@
 // Create edit component
 import React, { Component } from 'react'
 import axios from 'axios'
-import {
-  BrowserRouter as Router,
-  Link,
-  Route,
-  Redirect,
-  Switch
-} from 'react-router-dom'
-import Forms from '../AddProduct/Forms.css'
+import '../AddProduct/Forms.css'
 
 class EditStore extends Component {
   constructor (props) {
@@ -94,9 +87,9 @@ class EditStore extends Component {
               onChange={this.handleChange}
               placeholder={this.state.about}
             />
-            <br/>
+          <br />
           <input type='submit' value='Submit' />
-          <br/>
+          <br />
           <button onClick={this.handleDelete}>
           Completely Destroy this store
         </button>

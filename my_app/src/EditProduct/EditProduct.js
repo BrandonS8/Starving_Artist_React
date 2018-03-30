@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import axios from 'axios'
-import Forms from '../AddProduct/Forms.css'
+import '../AddProduct/Forms.css'
 
 class EditProduct extends Component {
   constructor () {

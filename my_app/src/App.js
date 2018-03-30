@@ -28,11 +28,10 @@ class App extends Component {
             </div>
           </Link>
 
-          <div className='navRight'>
-            <Link to='/add-Store'>Create Store</Link>
-            {/* <Link to="/login">Login</Link>
+          <Route exact path='/' render={() => <div className='navRight'> <Link to='/add-Store'>Create Store</Link> </div>} />
+          {/* <Link to='/add-Store'>Create Store</Link> */}
+          {/* <Link to="/login">Login</Link>
             <Link to="/signup">Signup</Link> */}
-          </div>
         </nav>
 
         <Switch>
