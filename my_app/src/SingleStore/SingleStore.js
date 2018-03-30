@@ -49,18 +49,24 @@ class SingleStore extends Component {
     // return { products }
     return (
       <div>
-        <Link to={this.props.match.params.id + '/edit'}>
-          <h3>Edit this Store</h3>
-        </Link>
-        <a
-          href={'/' + this.props.match.params.id + '/add'}
-          className="addProductButton"
-        >
-          Add A Product
-        </a>
-        <h1>{this.state.name}</h1>
-        <h2>{this.state.about}</h2>
-        {products}
+        <div className="SingleStoreContainer">
+          <div className="singleStoreEditAdd">
+            <Link to={this.props.match.params.id + '/edit'}>
+              <h3>Edit this Store</h3>
+            </Link>
+            <a
+              href={'/' + this.props.match.params.id + '/add'}
+              className="addProductButton"
+            >
+              Add A Product
+            </a>
+          </div>
+          <div>
+            <h1>{this.state.name}</h1>
+            <h2>{this.state.about}</h2>
+          </div>
+        </div>
+        <div className="ProductCardContainer">{products}</div>
       </div>
     )
   }

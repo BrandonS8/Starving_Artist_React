@@ -66,8 +66,46 @@ nav {
 .ProductCardContainer {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: space-around;
+  border: 1px solid lightgray;
+  padding: 1%;
+  margin: 1%;
+  background-color: whitesmoke;
+}
+
+.productCard {
   height: 250px;
   width: 250px;
-  border: 1px solid lightgray;
+  margin: 5%;
+  padding: 1%;
+  background-color: white;
+
 }
+
+.SingleStoreContainer {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+}
+
+.SingleStoreEditAdd {
+  padding: 0px;
+  margin: 0px;
+  line-height: 0px;
+  color: gray;
+}
+
+.singleStoreEditAdd {
+  display: flex;
+  justify-content: flex-start;
+  margin-right: 20%;
+}
+
+.singleStoreEditAdd a {
+  color: rgb(253, 216, 4);
+}
+
+.SingleStoreContainer h1 {
+  font-size: 300%;
+}
+
