@@ -4,12 +4,12 @@ class ProductCard extends Component {
   render() {
     return (
       <div className="productCard">
+        <h1>{this.props.title}</h1>
         <img
           src={this.props.image}
           alt="image of art"
           className="imgSizeControl"
         />
-        <h1>{this.props.title}</h1>
         <h3>${this.props.price}</h3>
       </div>
     )

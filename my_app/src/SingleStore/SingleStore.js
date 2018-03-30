@@ -57,6 +57,7 @@ class SingleStore extends Component {
             <a
               href={'/' + this.props.match.params.id + '/add'}
               className="addProductButton"
+              id="addProduct"
             >
               Add A Product
             </a>
