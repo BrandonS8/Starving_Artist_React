@@ -75,7 +75,7 @@ class AddProduct extends Component {
         </form>
 
         <div className='previewImage'>
-          {this.state.image !== '' ? <img src={this.state.image} /> : this.state.status === 'uploading' ? <div className='loading' /> : <p>Upload an image</p>}
+          {this.state.image !== '' ? <img src={this.state.image} alt='product' /> : this.state.status === 'uploading' ? <div className='loading' /> : <p>Upload an image</p>}
         </div>
       </div>
     )
