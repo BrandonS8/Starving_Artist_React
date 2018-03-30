@@ -36,7 +36,7 @@ class AddProduct extends Component {
   render () {
     return (
       <div className='container-form'>
-        
+
         <form onSubmit={this.onSubmit}>
 
           <label for='title'>Title</label>
@@ -56,7 +56,7 @@ class AddProduct extends Component {
 
           <input type='submit' value='ADD' />
         </form>
-        
+
         <div className='previewImage'>
           {this.state.image != '' ? <img src={this.state.image} /> : <p>No Image Set</p>}
         </div>

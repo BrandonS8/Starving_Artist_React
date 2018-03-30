@@ -68,6 +68,9 @@ class SingleStore extends Component {
           </div>
         </div>
         <div className="ProductCardContainer">{products}</div>
+        {/* <h1>{this.state.name}</h1> */}
+        {/* <h2>{this.state.about}</h2> */}
+        {products}
       </div>
     )
   }
