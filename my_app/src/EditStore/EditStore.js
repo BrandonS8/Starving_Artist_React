@@ -94,9 +94,9 @@ class EditStore extends Component {
               onChange={this.handleChange}
               placeholder={this.state.about}
             />
-            <br/>
+          <br />
           <input type='submit' value='Submit' />
-          <br/>
+          <br />
           <button onClick={this.handleDelete}>
           Completely Destroy this store
         </button>

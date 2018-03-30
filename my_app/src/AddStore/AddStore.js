@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import axios from 'axios'
 import Forms from '../AddProduct/Forms.css'
 
-
 class AddStore extends Component {
   constructor () {
     super()
@@ -25,7 +24,7 @@ class AddStore extends Component {
     return (
       <div className='container-form'>
         <form onSubmit={this.onSubmit}>
-          <input type='text' name='name' placeholder='name' className='width'/>
+          <input type='text' name='name' placeholder='name' className='width' />
           <input type='text' name='about' placeholder='about' className='width' />
           <input type='submit' value='Create'className='btn-width' />
         </form>
