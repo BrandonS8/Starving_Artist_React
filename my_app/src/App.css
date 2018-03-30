@@ -1,6 +1,6 @@
-/* * {
+* {
   border: 1px solid red;
-} */
+}
 nav {
   background-image: url('./public/colorfulcity.jpg');
   background-size: cover;
@@ -66,8 +66,74 @@ nav {
 .ProductCardContainer {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: space-around;
+  /* border: 1px solid lightgray; */
+  padding: 1%;
+  margin: 1%;
+  /* background-color: whitesmoke; */
+}
+
+.productCard {
+  height: 250px;
+  width: 250px;
+  margin: 2%;
+  padding: 5%;
+  background-color: white;
+  border: 1px solid lightgray;
+}
+
+.productCard h1 {
+  background-color: red;
+  margin-left: -3%;
+  margin-right: -3%;
+  padding: 3%;
+  margin-top: -9px;
+
+}
+
+.SingleStoreContainer {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+}
+
+.SingleStoreEditAdd {
+  padding: 0px;
+  margin: 0px;
+  line-height: 0px;
+  /* color: gray; */
+}
+
+.singleStoreEditAdd {
+  display: flex;
+  justify-content: flex-start;
+  margin-right: 20%;
+}
+
+.singleStoreEditAdd a {
+  color: rgb(253, 216, 4);
+  font-weight: 800;
+  margin-top: 10px;
+}
+
+.SingleStoreContainer h1 {
+  font-size: 300%;
+  margin-bottom: -20px;
+}
+
+
+.SingleStoreContainer {
+  margin: 5px 10px 0px 10px;
+}
+
+.productCard img {
+  /* width: 100%;
+  max-height: 80%; */
+  
+}
+
+  /* justify-content: center;
   height: 250px;
   width: 250px;
   border: 1px solid lightgray;
-}
+} */

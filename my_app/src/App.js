@@ -28,9 +28,15 @@ class App extends Component {
             </div>
           </Link>
 
+<<<<<<< HEAD
           <Route exact path='/' render={() => <div className='navRight'> <Link to='/add-Store'>Create Store</Link> </div>} />
           {/* <Link to='/add-Store'>Create Store</Link> */}
           {/* <Link to="/login">Login</Link>
+=======
+          <div className='navRight'>
+            <Link to='/add-Store'>Create Store</Link>
+            {/* <Link to="/login">Login</Link>
+>>>>>>> b0d6f5d9b3713cbc476b638b563ec94acb5d09d4
             <Link to="/signup">Signup</Link> */}
         </nav>
 
