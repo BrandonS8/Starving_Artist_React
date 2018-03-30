@@ -54,3 +54,22 @@ button {
   height: 250px;
   }
 
+.loading {
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  border: 5px solid rgba(0, 0, 0, 0.2);
+  border-top: 5px solid #3992D7;
+  animation: spin 1s linear infinite;
+}
+@keyframes spin{
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(180deg)
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

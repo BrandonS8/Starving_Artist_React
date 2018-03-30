@@ -80,9 +80,6 @@ class EditProduct extends Component {
           <label for='Price'>Price</label>
           <input type='text' name='price' value={this.state.price} onChange={this.handleChange} />
 
-          <label for='image'>Image</label>
-          <input type='text' name='image' value={this.state.image} onChange={this.handleChange} />
-
           <input type='submit' value='Edit' />
           <button onClick={this.handleDelete}>Delete Product</button>
         </form>

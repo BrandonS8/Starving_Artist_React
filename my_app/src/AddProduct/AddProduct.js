@@ -7,28 +7,44 @@ class AddProduct extends Component {
   constructor () {
     super()
     this.state = {
-      image: ''
+      image: '',
+      status: 'No Image Set',
+      error: ''
     }
     this.setImage = this.setImage.bind(this)
     this.onSubmit = this.onSubmit.bind(this)
+    this.startUpload = this.startUpload.bind(this)
   }
-
+  startUpload () {
+    this.setState({
+      status: 'uploading'
+    })
+  }
   onSubmit (e) {
     e.preventDefault()
-    console.log(e.target.name.value)
-    axios.post('https://starving-artist.herokuapp.com/api/' + this.props.match.params.id, {
-      title: e.target.title.value,
-      artist: e.target.artist.value,
-      description: e.target.description.value,
-      price: e.target.price.value,
-      image: this.state.image
-    }).then(res => console.log(res))
-      .then(() => this.props.history.push('/' + this.props.match.params.id))
+    if (this.state.status === 'uploaded') {
+      this.setState({
+        error: ''
+      })
+      axios.post('https://starving-artist.herokuapp.com/api/' + this.props.match.params.id, {
+        title: e.target.title.value,
+        artist: e.target.artist.value,
+        description: e.target.description.value,
+        price: e.target.price.value,
+        image: this.state.image
+      }).then(res => console.log(res))
+        .then(() => this.props.history.push('/' + this.props.match.params.id))
+    } else {
+      this.setState({
+        error: 'Wait for image to upload jeez speedy.'
+      })
+    }
   }
 
   setImage (url) {
     this.setState({
-      image: url
+      image: url,
+      status: 'uploaded'
     })
     console.log(this.state.image)
   }
@@ -36,7 +52,7 @@ class AddProduct extends Component {
   render () {
     return (
       <div className='container-form'>
-        
+
         <form onSubmit={this.onSubmit}>
 
           <label for='title'>Title</label>
@@ -52,13 +68,14 @@ class AddProduct extends Component {
           <input type='number' name='price' />
 
             Image
-        <UploadFile setImage={this.setImage} />
+        <UploadFile setImage={this.setImage} startUpload={this.startUpload} />
 
           <input type='submit' value='ADD' />
+          <p>{this.state.error}</p>
         </form>
-        
+
         <div className='previewImage'>
-          {this.state.image != '' ? <img src={this.state.image} /> : <p>No Image Set</p>}
+          {this.state.image !== '' ? <img src={this.state.image} /> : this.state.status === 'uploading' ? <div className='loading' /> : <p>Upload an image</p>}
         </div>
       </div>
     )

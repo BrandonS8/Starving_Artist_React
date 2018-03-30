@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import './UploadFile.css'
 import axios from 'axios'
 class UploadFile extends Component {
-  constructor(props) {
+  constructor (props) {
     super(props)
     this.state = {
       imageUrl: ''
@@ -10,8 +10,9 @@ class UploadFile extends Component {
     this.handleUpload = this.handleUpload.bind(this)
   }
 
-  handleUpload(e) {
+  handleUpload (e) {
     e.preventDefault()
+    this.props.startUpload()
     if (e.target.files.length > 0) {
       const fileData = new FormData()
       fileData.append('file', e.target.files[0])
@@ -44,13 +45,13 @@ class UploadFile extends Component {
 
   // https://levelup.gitconnected.com/file-upload-with-node-js-react-js-686e342ad7e7
 
-  render() {
+  render () {
     return (
       <div>
         <input
-          type="file"
-          accept="image/jpg"
-          name="imageFile"
+          type='file'
+          accept='image/jpg'
+          name='imageFile'
           onChange={this.handleUpload}
           required
         />
