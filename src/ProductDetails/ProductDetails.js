@@ -1,9 +1,10 @@
 import React, { Component } from 'react'
 import axios from 'axios'
 import './ProductDetails.css'
+import { Link } from 'react-router-dom'
 
 class ProductDetail extends Component {
-  constructor () {
+  constructor() {
     super()
 
     this.state = {
@@ -11,7 +12,7 @@ class ProductDetail extends Component {
     }
   }
 
-  componentDidMount () {
+  componentDidMount() {
     axios
       .get(
         'https://starving-artist.herokuapp.com/api/' +
@@ -26,23 +27,32 @@ class ProductDetail extends Component {
       })
   }
 
-  render () {
+  render() {
     return (
-      <div className='product-preview'>
+      <div className="product-preview">
         <img
           src={this.state.product.image}
           alt={this.state.product.name}
-          className='product-image'
+          className="product-image"
         />
-        <div className='product-info'>
+        <div className="product-info">
           <h1>{this.state.product.title}</h1>
           <h2>By: {this.state.product.artist}</h2>
-          <p className='product-desc'>"{this.state.product.description}"</p>
-          <p className='product-price'>${this.state.product.price}</p>
-          <a href={'/' + this.props.match.params.id + '/' + this.state.product._id + '/edit'}
-            className='editProductButton'>Edit Product</a>
+          <p className="product-desc">"{this.state.product.description}"</p>
+          <p className="product-price">${this.state.product.price}</p>
+          <Link
+            to={
+              '/' +
+              this.props.match.params.id +
+              '/' +
+              this.state.product._id +
+              '/edit'
+            }
+            className="editProductButton"
+          >
+            Edit Product
+          </Link>
         </div>
-
       </div>
     )
   }

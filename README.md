@@ -1,7 +1,7 @@
 # Starving Artist
-Starving Artist is an app that allows users to upload artwork to sell. It is primarily targeted toward college students in art programs with a focus on the dc area.
+Starving Artist is an app that allows users to upload artwork to sell. It is primarily targeted toward college students in art programs with a focus on the dc area, and is a work in progress.
 
-Brandon, Hannah, and Mahwish created Starving Artist as our group project at [General Assembly](https://generalassemb.ly/)
+Brandon, Hannah, and Mahwish created Starving Artist as their group project at [General Assembly](https://generalassemb.ly/)
 
 ## Overview
 ![preview](https://i.imgur.com/0isy85K.jpg)
